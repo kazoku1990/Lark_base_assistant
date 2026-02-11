@@ -15,7 +15,7 @@
 ## 目录结构
 
 ```
-feishu-bitable-expert/
+feishu-bitable-expert/          # Skill源文件目录
 ├── SKILL.md                    # 主入口文档
 └── references/
     ├── field-types.md          # 字段类型详解（20+种字段）
@@ -23,6 +23,7 @@ feishu-bitable-expert/
     ├── formulas.md             # 公式与函数参考（60+函数）
     ├── automation.md           # 自动化规则配置
     └── advanced-features.md    # 高级功能与最佳实践
+feishu-bitable-expert.skill     # 打包好的Skill文件（可直接使用）
 ```
 
 ## 核心功能详解
@@ -60,28 +61,46 @@ feishu-bitable-expert/
 
 ## 使用方法
 
-### 在Coze中使用
+### 方法1：直接使用打包好的Skill文件（推荐）
+
 1. 在Coze中创建Bot或Skill
-2. 加载 `feishu-bitable-expert.skill` 文件
-3. 根据Bot的触发语境，智能体会自动引用相关参考文档
+2. 下载 `feishu-bitable-expert.skill` 文件
+3. 在Coze中导入该文件
+4. 根据Bot的触发语境，智能体会自动引用相关参考文档
 
-### 典型使用场景
+**注意**：`feishu-bitable-expert.skill` 是打包好的文件，可以直接导入Coze使用，无需重新打包。
 
-#### 场景1：设计项目管理表
+### 方法2：从源文件手动打包
+
+如果你需要从源文件手动打包Skill：
+
+1. 安装打包工具（如果有）
+2. 将 `feishu-bitable-expert/` 目录打包为 `.skill` 文件
+3. 导入Coze使用
+
+### 方法3：查看源文件学习
+
+如果你想深入了解Skill的结构和内容，可以直接查看 `feishu-bitable-expert/` 目录下的源文件：
+- `SKILL.md`：了解Skill的入口和流程
+- `references/`：查看详细的参考文档
+
+## 典型使用场景
+
+### 场景1：设计项目管理表
 ```
 用户：帮我设计一个项目管理的多维表格
 智能体：基于 field-types.md 和 view-types.md
       提供完整的项目管理表结构、字段配置、视图组合方案
 ```
 
-#### 场景2：配置自动化规则
+### 场景2：配置自动化规则
 ```
 用户：如何配置库存预警自动化
 智能体：基于 automation.md
       指导配置触发器、条件和动作，提供完整的自动化方案
 ```
 
-#### 场景3：编写复杂公式
+### 场景3：编写复杂公式
 ```
 用户：帮我写一个计算客户价值的公式
 智能体：基于 formulas.md
